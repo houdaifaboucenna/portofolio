@@ -1,0 +1,47 @@
+{
+    "categories": [
+        {
+            "name": "Backend",
+            "skills": [
+                "PHP",
+                "Laravel",
+                "Node.js",
+                "REST APIs",
+                "GraphQL",
+                "Microservices"
+            ]
+        },
+        {
+            "name": "Frontend",
+            "skills": [
+                "JavaScript",
+                "TypeScript",
+                "Vue.js",
+                "React",
+                "Tailwind CSS",
+                "Alpine.js"
+            ]
+        },
+        {
+            "name": "Databases",
+            "skills": [
+                "MySQL",
+                "PostgreSQL",
+                "Redis",
+                "MongoDB",
+                "Eloquent ORM"
+            ]
+        },
+        {
+            "name": "DevOps & Tools",
+            "skills": [
+                "Docker",
+                "Git",
+                "CI/CD",
+                "Linux",
+                "Nginx",
+                "AWS/DigitalOcean"
+            ]
+        }
+    ]
+}

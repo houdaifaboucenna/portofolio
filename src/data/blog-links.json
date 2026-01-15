@@ -1,0 +1,25 @@
+{
+    "articles": [
+        {
+            "title": "Building Scalable APIs with Laravel",
+            "excerpt": "Learn how to design and implement RESTful APIs that can handle millions of requests using Laravel's powerful features.",
+            "platform": "Medium",
+            "url": "https://medium.com/@yourusername/building-scalable-apis",
+            "publishDate": "2024-12-15"
+        },
+        {
+            "title": "Clean Architecture in PHP Applications",
+            "excerpt": "A practical guide to implementing clean architecture principles in your PHP projects for better maintainability.",
+            "platform": "Dev.to",
+            "url": "https://dev.to/yourusername/clean-architecture-php",
+            "publishDate": "2024-11-20"
+        },
+        {
+            "title": "Mastering Laravel Queues",
+            "excerpt": "Deep dive into Laravel's queue system for handling background jobs and improving application performance.",
+            "platform": "Medium",
+            "url": "https://medium.com/@yourusername/mastering-laravel-queues",
+            "publishDate": "2024-10-10"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogLinks from "../components/sections/BlogLinks.astro";
+
+import siteData from "../data/site.json";
+
+const title = `Blog | ${siteData.name}`;
+const description =
+    "Technical articles and insights on web development, Laravel, PHP, and software architecture.";
+---
+
+<BaseLayout title={title} description={description}>
+    <!-- Page Header -->
+    <section
+        class="py-12 md:py-16 bg-gradient-to-br from-neutral-50 to-neutral-100"
+    >
+        <div class="container">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                Blog & Writing
+            </h1>
+            <p class="text-lg text-neutral-600 max-w-2xl">
+                Technical articles and insights I've published on various
+                platforms. Click any article to read the full post on its
+                original platform.
+            </p>
+        </div>
+    </section>
+
+    <!-- All Blog Links -->
+    <BlogLinks />
+</BaseLayout>

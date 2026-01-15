@@ -1,0 +1,99 @@
+---
+interface Props {
+    brief?: boolean;
+}
+
+const { brief = false } = Astro.props;
+
+const summary = `I'm a full-stack developer with a focus on building scalable, maintainable web applications. 
+I specialize in Laravel and modern JavaScript, crafting robust APIs, SaaS platforms, e-commerce solutions, and custom dashboards.`;
+
+const focusAreas = [
+    {
+        icon: "🔧",
+        title: "REST APIs",
+        description:
+            "Design and implementation of scalable, well-documented APIs",
+    },
+    {
+        icon: "🚀",
+        title: "SaaS Platforms",
+        description: "Multi-tenant applications with subscription management",
+    },
+    {
+        icon: "🛒",
+        title: "E-Commerce",
+        description: "Full-featured online stores with payment integration",
+    },
+    {
+        icon: "📊",
+        title: "Dashboards",
+        description: "Data-rich admin panels and analytics interfaces",
+    },
+];
+---
+
+<section id="about" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle max-w-2xl">
+            Turning ideas into reliable, well-architected solutions.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            <!-- Summary -->
+            <div>
+                <p class="text-neutral-600 leading-relaxed mb-6">
+                    {summary}
+                </p>
+                <p class="text-neutral-600 leading-relaxed">
+                    I believe in writing clean, testable code that stands the
+                    test of time. My approach combines technical expertise with
+                    a deep understanding of business requirements to deliver
+                    solutions that truly make a difference.
+                </p>
+
+                {
+                    !brief && (
+                        <a
+                            href="/about"
+                            class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium mt-6 transition-colors"
+                        >
+                            Learn more about me
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </a>
+                    )
+                }
+            </div>
+
+            <!-- Focus Areas -->
+            <div class="grid grid-cols-2 gap-4">
+                {
+                    focusAreas.map((area) => (
+                        <div class="p-4 rounded-lg bg-neutral-50 border border-neutral-100 hover:border-primary-200 transition-colors">
+                            <div class="text-2xl mb-2">{area.icon}</div>
+                            <h3 class="font-semibold text-neutral-900 mb-1">
+                                {area.title}
+                            </h3>
+                            <p class="text-sm text-neutral-600">
+                                {area.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+---
+import skillsData from "../../data/skills.json";
+
+const categoryIcons: Record<string, string> = {
+    Backend: "⚙️",
+    Frontend: "🎨",
+    Databases: "🗃️",
+    "DevOps & Tools": "🔧",
+};
+---
+
+<section id="skills" class="section bg-neutral-50">
+    <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle max-w-2xl">
+            The tools and technologies I work with to build great products.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+                skillsData.categories.map((category) => (
+                    <div class="bg-white p-6 rounded-xl border border-neutral-200 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">
+                                {categoryIcons[category.name] || "📦"}
+                            </span>
+                            <h3 class="font-semibold text-neutral-900">
+                                {category.name}
+                            </h3>
+                        </div>
+                        <ul class="space-y-2">
+                            {category.skills.map((skill) => (
+                                <li class="flex items-center gap-2 text-neutral-600">
+                                    <svg
+                                        class="w-4 h-4 text-primary-500 flex-shrink-0"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                    <span class="text-sm">{skill}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

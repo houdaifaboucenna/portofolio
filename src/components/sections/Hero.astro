@@ -1,0 +1,70 @@
+---
+import siteData from "../../data/site.json";
+---
+
+<section class="section bg-gradient-to-br from-neutral-50 to-neutral-100">
+    <div class="container">
+        <div class="max-w-3xl">
+            <!-- Greeting -->
+            <p class="text-primary-600 font-medium mb-4 animate-fade-in">
+                Hello, I'm
+            </p>
+
+            <!-- Name -->
+            <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4"
+            >
+                {siteData.name}
+            </h1>
+
+            <!-- Title -->
+            <p class="text-xl md:text-2xl text-neutral-600 mb-6">
+                {siteData.title}
+            </p>
+
+            <!-- Value Proposition -->
+            <p class="text-lg text-neutral-600 mb-8 leading-relaxed max-w-2xl">
+                {siteData.tagline}
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4">
+                <a href="/projects" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <svg
+                        class="w-5 h-5 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Contact Me</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+</style>

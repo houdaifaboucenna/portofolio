@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Projects from "../components/sections/Projects.astro";
+
+import siteData from "../data/site.json";
+
+const title = `Projects | ${siteData.name}`;
+const description =
+    "Explore my portfolio of web development projects, including SaaS platforms, e-commerce solutions, and custom APIs.";
+---
+
+<BaseLayout title={title} description={description}>
+    <!-- Page Header -->
+    <section
+        class="py-12 md:py-16 bg-gradient-to-br from-neutral-50 to-neutral-100"
+    >
+        <div class="container">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                Projects
+            </h1>
+            <p class="text-lg text-neutral-600 max-w-2xl">
+                A showcase of my work across different domains. Each project
+                represents a unique challenge and solution built with modern
+                technologies.
+            </p>
+        </div>
+    </section>
+
+    <!-- All Projects -->
+    <Projects />
+</BaseLayout>

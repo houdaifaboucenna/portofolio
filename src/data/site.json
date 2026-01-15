@@ -1,0 +1,11 @@
+{
+    "name": "Your Name",
+    "title": "Laravel / Full-Stack Developer",
+    "tagline": "Building scalable web applications with clean code and modern architecture",
+    "description": "Full-stack developer specializing in Laravel, PHP, and modern JavaScript. I build robust APIs, SaaS platforms, and custom web solutions.",
+    "email": "your.email@example.com",
+    "phone": "+1234567890",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "siteUrl": "https://yourdomain.com"
+}

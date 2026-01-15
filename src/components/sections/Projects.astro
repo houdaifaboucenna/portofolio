@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../ProjectCard.astro";
+
+interface Props {
+    featured?: boolean;
+    limit?: number;
+    showViewAll?: boolean;
+}
+
+const { featured = false, limit, showViewAll = false } = Astro.props;
+
+let projects = await getCollection("projects");
+
+// Sort by order
+projects.sort((a, b) => a.data.order - b.data.order);
+
+// Filter featured if requested
+if (featured) {
+    projects = projects.filter((p) => p.data.featured);
+}
+
+// Limit if specified
+if (limit) {
+    projects = projects.slice(0, limit);
+}
+---
+
+<section id="projects" class="section bg-white">
+    <div class="container">
+        <div
+            class="flex flex-wrap items-end justify-between gap-4 mb-8 md:mb-12"
+        >
+            <div>
+                <h2 class="section-title mb-2">Projects</h2>
+                <p class="text-lg text-neutral-600">
+                    {
+                        featured
+                            ? "Featured work showcasing my expertise."
+                            : "A collection of my work and technical projects."
+                    }
+                </p>
+            </div>
+            {
+                showViewAll && (
+                    <a
+                        href="/projects"
+                        class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2 transition-colors"
+                    >
+                        View all projects
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                        </svg>
+                    </a>
+                )
+            }
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+    </div>
+</section>

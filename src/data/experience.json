@@ -1,0 +1,36 @@
+{
+    "experiences": [
+        {
+            "role": "Full-Stack Developer",
+            "context": "Freelance",
+            "period": "2022 - Present",
+            "responsibilities": [
+                "Designed and developed custom web applications for clients across various industries",
+                "Built RESTful APIs and integrated third-party services",
+                "Implemented CI/CD pipelines for automated testing and deployment",
+                "Collaborated with clients to gather requirements and deliver solutions on time"
+            ]
+        },
+        {
+            "role": "Backend Developer",
+            "context": "Startup",
+            "period": "2020 - 2022",
+            "responsibilities": [
+                "Developed core backend services for a SaaS platform using Laravel",
+                "Optimized database queries reducing response times by 40%",
+                "Implemented payment integration and subscription management",
+                "Mentored junior developers and conducted code reviews"
+            ]
+        },
+        {
+            "role": "Web Developer",
+            "context": "Agency",
+            "period": "2018 - 2020",
+            "responsibilities": [
+                "Built client websites and e-commerce platforms",
+                "Maintained and upgraded legacy PHP applications",
+                "Created responsive designs with modern CSS frameworks"
+            ]
+        }
+    ]
+}
