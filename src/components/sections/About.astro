@@ -5,70 +5,75 @@ interface Props {
 
 const { brief = false } = Astro.props;
 
-const highlights = [
-    { number: "6+", label: "Years Experience" },
-    { number: "20+", label: "Projects Delivered" },
-    { number: "4+", label: "Companies" },
+const stats = [
+    { value: "6+", label: "Years Experience" },
+    { value: "20+", label: "Projects Delivered" },
+    { value: "4", label: "Companies" },
 ];
 ---
 
-<section id="about" class="section bg-white">
+<section id="about" class="section border-t border-neutral-100">
     <div class="container">
-        <div class="max-w-3xl">
-            <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">About</h2>
 
-            <p class="text-lg text-neutral-600 leading-relaxed mb-6">
-                Full-Stack Developer specialized in <strong
-                    class="text-neutral-800">Laravel</strong
-                > and modern JavaScript. I build complete systems — from responsive
-                interfaces to backend architecture, APIs, and infrastructure.
-            </p>
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Bio Text -->
+            <div class="md:col-span-2">
+                <p class="text-lg text-neutral-600 leading-relaxed mb-4">
+                    Full-Stack Developer with <strong class="text-neutral-900"
+                        >6+ years</strong
+                    > of experience building scalable web applications across freelance,
+                    remote, and hybrid environments.
+                </p>
 
-            <p class="text-neutral-600 leading-relaxed mb-8">
-                Comfortable with SQL and NoSQL databases, DevOps workflows, and
-                microservices architecture. Focused on clean code, performance,
-                and solving real-world problems.
-            </p>
+                <p class="text-neutral-600 leading-relaxed mb-6">
+                    Specialized in <strong class="text-neutral-900"
+                        >Laravel</strong
+                    > with strong front-end foundations. I design complete systems
+                    — from responsive interfaces to APIs, databases, and server infrastructure.
+                    Focused on clean code, performance, and real-world problem solving.
+                </p>
 
-            <!-- Highlights -->
-            <div class="flex flex-wrap gap-8 mb-6">
                 {
-                    highlights.map((item) => (
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-primary-600">
-                                {item.number}
+                    !brief && (
+                        <a
+                            href="/about"
+                            class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
+                        >
+                            Read full bio
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </a>
+                    )
+                }
+            </div>
+
+            <!-- Stats -->
+            <div class="flex md:flex-col gap-6 md:gap-4">
+                {
+                    stats.map((stat) => (
+                        <div class="text-center md:text-left">
+                            <div class="text-3xl md:text-4xl font-bold text-primary-600">
+                                {stat.value}
                             </div>
                             <div class="text-sm text-neutral-500">
-                                {item.label}
+                                {stat.label}
                             </div>
                         </div>
                     ))
                 }
             </div>
-
-            {
-                !brief && (
-                    <a
-                        href="/about"
-                        class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
-                    >
-                        Read full bio
-                        <svg
-                            class="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
-                    </a>
-                )
-            }
         </div>
     </div>
 </section>

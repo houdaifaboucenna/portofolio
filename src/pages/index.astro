@@ -2,9 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/sections/Hero.astro";
 import About from "../components/sections/About.astro";
-import Projects from "../components/sections/Projects.astro";
 import Skills from "../components/sections/Skills.astro";
 import Experience from "../components/sections/Experience.astro";
+import Projects from "../components/sections/Projects.astro";
 import BlogLinks from "../components/sections/BlogLinks.astro";
 import Contact from "../components/sections/Contact.astro";
 
@@ -17,9 +17,9 @@ const description = siteData.description;
 <BaseLayout title={title} description={description}>
     <Hero />
     <About />
-    <Projects featured={true} showViewAll={true} />
     <Skills />
     <Experience />
+    <Projects featured={true} showViewAll={true} />
     <BlogLinks limit={3} showViewAll={true} />
     <Contact />
 </BaseLayout>

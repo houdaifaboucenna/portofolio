@@ -1,49 +1,96 @@
 ---
-// Skills with SVG icons for popular technologies
-const skills = [
-    // Backend
-    { name: "PHP", icon: "php", category: "Backend" },
-    { name: "Laravel", icon: "laravel", category: "Backend" },
-    { name: "Livewire", icon: "livewire", category: "Backend" },
-    { name: "Node.js", icon: "nodejs", category: "Backend" },
-    { name: "GraphQL", icon: "graphql", category: "Backend" },
-    // Frontend
-    { name: "JavaScript", icon: "javascript", category: "Frontend" },
-    { name: "Vue.js", icon: "vue", category: "Frontend" },
-    { name: "Alpine.js", icon: "alpine", category: "Frontend" },
-    { name: "Tailwind", icon: "tailwind", category: "Frontend" },
-    // Database
-    { name: "MySQL", icon: "mysql", category: "Database" },
-    { name: "PostgreSQL", icon: "postgresql", category: "Database" },
-    { name: "MongoDB", icon: "mongodb", category: "Database" },
-    // DevOps
-    { name: "Docker", icon: "docker", category: "DevOps" },
-    { name: "Git", icon: "git", category: "DevOps" },
-    { name: "Linux", icon: "linux", category: "DevOps" },
-    { name: "AWS", icon: "aws", category: "DevOps" },
+// Complete tech stack from profile with icons
+const skillGroups = [
+    {
+        category: "Backend",
+        skills: [
+            { name: "PHP", icon: "php" },
+            { name: "Laravel", icon: "laravel" },
+            { name: "Livewire", icon: "livewire" },
+            { name: "Filament", icon: "php" },
+            { name: "Node.js", icon: "nodedotjs" },
+            { name: "Express.js", icon: "express" },
+            { name: "REST APIs", icon: "openapiinitiative" },
+            { name: "GraphQL", icon: "graphql" },
+        ],
+    },
+    {
+        category: "Frontend",
+        skills: [
+            { name: "JavaScript", icon: "javascript" },
+            { name: "Vue 3", icon: "vuedotjs" },
+            { name: "Alpine.js", icon: "alpinedotjs" },
+            { name: "jQuery", icon: "jquery" },
+            { name: "Tailwind CSS", icon: "tailwindcss" },
+            { name: "Bootstrap", icon: "bootstrap" },
+            { name: "Sass", icon: "sass" },
+            { name: "Vite", icon: "vite" },
+        ],
+    },
+    {
+        category: "Databases",
+        skills: [
+            { name: "MySQL", icon: "mysql" },
+            { name: "PostgreSQL", icon: "postgresql" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "InfluxDB", icon: "influxdb" },
+        ],
+    },
+    {
+        category: "DevOps & Tools",
+        skills: [
+            { name: "Docker", icon: "docker" },
+            { name: "Git", icon: "git" },
+            { name: "GitHub Actions", icon: "githubactions" },
+            { name: "Linux", icon: "linux" },
+            { name: "Nginx", icon: "nginx" },
+            { name: "AWS", icon: "amazonwebservices" },
+        ],
+    },
+    {
+        category: "Testing",
+        skills: [
+            { name: "Pest", icon: "php" },
+            { name: "Jest", icon: "jest" },
+            { name: "Vitest", icon: "vitest" },
+        ],
+    },
 ];
 ---
 
-<section id="skills" class="section bg-white">
+<section id="skills" class="section bg-neutral-50">
     <div class="container">
         <h2 class="section-title">Tech Stack</h2>
         <p class="section-subtitle max-w-2xl">
-            Technologies I use to build scalable applications.
+            Technologies I use daily to build scalable applications.
         </p>
 
-        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+        <div class="space-y-8">
             {
-                skills.map((skill) => (
-                    <div class="skill-badge group" title={skill.name}>
-                        <img
-                            src={`https://cdn.simpleicons.org/${skill.icon}`}
-                            alt={skill.name}
-                            class="w-5 h-5 grayscale group-hover:grayscale-0 transition-all"
-                            loading="lazy"
-                        />
-                        <span class="text-sm font-medium text-neutral-700 group-hover:text-neutral-900">
-                            {skill.name}
-                        </span>
+                skillGroups.map((group) => (
+                    <div>
+                        <h3 class="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-4">
+                            {group.category}
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            {group.skills.map((skill) => (
+                                <div
+                                    class="skill-badge group"
+                                    title={skill.name}
+                                >
+                                    <img
+                                        src={`https://cdn.simpleicons.org/${skill.icon}`}
+                                        alt=""
+                                        class="w-5 h-5 grayscale group-hover:grayscale-0 transition-all"
+                                        loading="lazy"
+                                        onerror="this.style.display='none'"
+                                    />
+                                    <span class="text-sm font-medium text-neutral-700 group-hover:text-neutral-900">
+                                        {skill.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 ))
             }
@@ -53,6 +100,6 @@ const skills = [
 
 <style>
     .skill-badge {
-        @apply inline-flex items-center gap-2 px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-all cursor-default;
+        @apply inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-all cursor-default;
     }
 </style>
