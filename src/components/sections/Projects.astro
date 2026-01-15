@@ -26,26 +26,35 @@ if (limit) {
 }
 ---
 
-<section id="projects" class="section bg-white">
-    <div class="container">
+<section id="projects" class="section gradient-bg relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 opacity-40">
         <div
-            class="flex flex-wrap items-end justify-between gap-4 mb-8 md:mb-12"
+            class="absolute top-1/4 left-0 w-64 h-64 bg-violet-200 rounded-full blur-3xl"
         >
-            <div>
-                <h2 class="section-title mb-2">Projects</h2>
-                <p class="text-lg text-neutral-600">
-                    {
-                        featured
-                            ? "Featured work showcasing my expertise."
-                            : "A collection of my work and technical projects."
-                    }
-                </p>
-            </div>
+        </div>
+        <div
+            class="absolute bottom-1/4 right-0 w-72 h-72 bg-primary-200 rounded-full blur-3xl"
+        >
+        </div>
+    </div>
+
+    <div class="container relative z-10">
+        <!-- Centered Header -->
+        <div class="section-header">
+            <h2 class="section-title-gradient">Projects</h2>
+            <p class="section-subtitle">
+                {
+                    featured
+                        ? "Featured work showcasing my expertise"
+                        : "A collection of my work and technical projects"
+                }
+            </p>
             {
                 showViewAll && (
                     <a
                         href="/projects"
-                        class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2 transition-colors"
+                        class="link-animated inline-flex items-center gap-2 mt-4"
                     >
                         View all projects
                         <svg
@@ -66,7 +75,7 @@ if (limit) {
             }
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => <ProjectCard project={project} />)}
         </div>
     </div>

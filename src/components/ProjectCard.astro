@@ -9,12 +9,28 @@ const { project } = Astro.props;
 const { title, description, techStack, demoUrl, githubUrl } = project.data;
 ---
 
-<div class="card group">
+<div
+    class="group bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 overflow-hidden hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/30 hover:-translate-y-1 transition-all duration-300"
+>
     <!-- Project Image Placeholder -->
     <div
-        class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center"
+        class="aspect-video bg-gradient-to-br from-primary-100 via-primary-50 to-violet-100 flex items-center justify-center relative overflow-hidden"
     >
-        <span class="text-4xl">🚀</span>
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-30">
+            <div
+                class="absolute top-4 right-4 w-20 h-20 bg-primary-300 rounded-full blur-2xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-4 left-4 w-16 h-16 bg-violet-300 rounded-full blur-2xl"
+            >
+            </div>
+        </div>
+        <span
+            class="text-4xl relative z-10 group-hover:scale-110 transition-transform duration-300"
+            >🚀</span
+        >
     </div>
 
     <!-- Content -->
@@ -35,12 +51,14 @@ const { title, description, techStack, demoUrl, githubUrl } = project.data;
                 techStack
                     .slice(0, 4)
                     .map((tech) => (
-                        <span class="badge badge-neutral text-xs">{tech}</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-neutral-100/80 text-neutral-600 rounded-lg">
+                            {tech}
+                        </span>
                     ))
             }
             {
                 techStack.length > 4 && (
-                    <span class="badge badge-neutral text-xs">
+                    <span class="px-2.5 py-1 text-xs font-medium bg-primary-100/80 text-primary-700 rounded-lg">
                         +{techStack.length - 4}
                     </span>
                 )
@@ -48,14 +66,14 @@ const { title, description, techStack, demoUrl, githubUrl } = project.data;
         </div>
 
         <!-- Links -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 pt-4 border-t border-neutral-100">
             {
                 demoUrl && (
                     <a
                         href={demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                        class="inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
                     >
                         <svg
                             class="w-4 h-4"
@@ -80,7 +98,7 @@ const { title, description, techStack, demoUrl, githubUrl } = project.data;
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-1 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                        class="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
                     >
                         <svg
                             class="w-4 h-4"

@@ -13,8 +13,8 @@ const articles = limit
     : blogLinksData.articles;
 
 const platformColors: Record<string, string> = {
-    Medium: "bg-green-100 text-green-700",
-    "Dev.to": "bg-purple-100 text-purple-700",
+    Medium: "bg-green-100/80 text-green-700",
+    "Dev.to": "bg-purple-100/80 text-purple-700",
 };
 
 function formatDate(dateString: string): string {
@@ -26,22 +26,19 @@ function formatDate(dateString: string): string {
 }
 ---
 
-<section id="blog" class="section bg-neutral-50">
+<section id="blog" class="section bg-white">
     <div class="container">
-        <div
-            class="flex flex-wrap items-end justify-between gap-4 mb-8 md:mb-12"
-        >
-            <div>
-                <h2 class="section-title mb-2">Blog & Writing</h2>
-                <p class="text-lg text-neutral-600">
-                    Technical articles and insights I've shared.
-                </p>
-            </div>
+        <!-- Centered Header -->
+        <div class="section-header">
+            <h2 class="section-title">Blog & Writing</h2>
+            <p class="section-subtitle">
+                Technical articles and insights I've shared
+            </p>
             {
                 showViewAll && (
                     <a
                         href="/blog"
-                        class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-2 transition-colors"
+                        class="link-animated inline-flex items-center gap-2 mt-4"
                     >
                         View all articles
                         <svg
@@ -62,19 +59,19 @@ function formatDate(dateString: string): string {
             }
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {
                 articles.map((article) => (
                     <a
                         href={article.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="card group p-6 hover:border-primary-200"
+                        class="group bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/30 hover:-translate-y-1 transition-all duration-300"
                     >
                         <div class="flex items-center gap-3 mb-3">
                             <span
                                 class:list={[
-                                    "badge text-xs",
+                                    "badge text-xs backdrop-blur-sm",
                                     platformColors[article.platform] ||
                                         "badge-neutral",
                                 ]}

@@ -12,13 +12,24 @@ const description =
 <BaseLayout title={title} description={description}>
     <!-- Page Header -->
     <section
-        class="py-12 md:py-16 bg-gradient-to-br from-neutral-50 to-neutral-100"
+        class="relative py-20 md:py-28 gradient-bg-animated overflow-hidden"
     >
-        <div class="container">
-            <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+        <!-- Decorative orbs -->
+        <div class="floating-orb w-64 h-64 bg-primary-400 -top-10 -left-10">
+        </div>
+        <div
+            class="floating-orb w-48 h-48 bg-violet-400 bottom-0 right-10"
+            style="animation-delay: -3s;"
+        >
+        </div>
+
+        <div class="container relative z-10 text-center">
+            <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent mb-6"
+            >
                 Projects
             </h1>
-            <p class="text-lg text-neutral-600 max-w-2xl">
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
                 A showcase of my work across different domains. Each project
                 represents a unique challenge and solution built with modern
                 technologies.

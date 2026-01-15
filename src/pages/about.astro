@@ -14,13 +14,29 @@ const description =
 <BaseLayout title={title} description={description}>
     <!-- Page Header -->
     <section
-        class="py-12 md:py-16 bg-gradient-to-br from-neutral-50 to-neutral-100"
+        class="relative py-20 md:py-28 gradient-bg-animated overflow-hidden"
     >
-        <div class="container">
-            <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+        <!-- Decorative orbs -->
+        <div class="floating-orb w-72 h-72 bg-primary-400 -top-20 left-10">
+        </div>
+        <div
+            class="floating-orb w-48 h-48 bg-emerald-400 bottom-10 right-20"
+            style="animation-delay: -2s;"
+        >
+        </div>
+        <div
+            class="floating-orb w-32 h-32 bg-violet-400 top-1/2 right-0"
+            style="animation-delay: -5s;"
+        >
+        </div>
+
+        <div class="container relative z-10 text-center">
+            <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent mb-6"
+            >
                 About Me
             </h1>
-            <p class="text-lg text-neutral-600 max-w-2xl">
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
                 Get to know my professional background and what drives my work.
             </p>
         </div>
@@ -29,205 +45,294 @@ const description =
     <!-- Bio Section -->
     <section class="section bg-white">
         <div class="container">
-            <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Main Bio -->
-                <div class="lg:col-span-2">
-                    <h2 class="text-2xl font-bold text-neutral-900 mb-6">
-                        Professional Summary
-                    </h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Main Bio Card -->
+                <div class="card-glass p-8 md:p-10 mb-12">
+                    <div class="text-center mb-10">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-neutral-900 mb-4"
+                        >
+                            Professional Summary
+                        </h2>
+                        <div
+                            class="w-20 h-1 bg-gradient-to-r from-primary-500 to-violet-500 mx-auto rounded-full"
+                        >
+                        </div>
+                    </div>
 
-                    <div class="prose prose-neutral max-w-none">
-                        <p class="text-neutral-600 leading-relaxed mb-4">
+                    <div class="space-y-6 text-center max-w-3xl mx-auto">
+                        <p class="text-lg text-neutral-600 leading-relaxed">
                             Full-Stack Web Developer with nearly <strong
+                                class="text-neutral-900"
                                 >6 years of experience</strong
                             > building scalable and maintainable web applications
                             across freelance, remote, and hybrid environments.
                         </p>
 
-                        <p class="text-neutral-600 leading-relaxed mb-4">
-                            Specialized in <strong>Laravel (PHP)</strong> with strong
-                            front-end foundations and experience designing complete
-                            systems — from responsive user interfaces to backend architecture,
-                            APIs, and server infrastructure. Comfortable working with
-                            SQL and NoSQL databases, modern DevOps workflows, and
-                            microservices-based architectures.
+                        <p class="text-neutral-600 leading-relaxed">
+                            Specialized in <strong class="text-neutral-900"
+                                >Laravel (PHP)</strong
+                            > with strong front-end foundations and experience designing
+                            complete systems — from responsive user interfaces to
+                            backend architecture, APIs, and server infrastructure.
+                            Comfortable working with SQL and NoSQL databases, modern
+                            DevOps workflows, and microservices-based architectures.
                         </p>
 
-                        <p class="text-neutral-600 leading-relaxed mb-4">
+                        <p class="text-neutral-600 leading-relaxed">
                             Focused on clean code, performance, and real-world
                             problem solving, with a strong habit of continuous
                             learning and technical documentation.
                         </p>
-
-                        <h3
-                            class="text-xl font-semibold text-neutral-900 mt-8 mb-4"
-                        >
-                            What I Focus On
-                        </h3>
-
-                        <ul class="space-y-2 text-neutral-600">
-                            <li class="flex items-start gap-2">
-                                <svg
-                                    class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span
-                                    ><strong>Backend Development:</strong> PHP, Laravel,
-                                    Livewire, Filament, Node.js, REST APIs, GraphQL</span
-                                >
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg
-                                    class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span
-                                    ><strong>Frontend Development:</strong> Vue 3,
-                                    Alpine.js, JavaScript, Tailwind CSS, Bootstrap</span
-                                >
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg
-                                    class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span
-                                    ><strong>Microservices:</strong> Building distributed
-                                    systems with Docker, Kafka, GraphQL API Gateways</span
-                                >
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg
-                                    class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span
-                                    ><strong>DevOps:</strong> Docker, CI/CD pipelines,
-                                    AWS, Linux server management, Nginx</span
-                                >
-                            </li>
-                        </ul>
-
-                        <h3
-                            class="text-xl font-semibold text-neutral-900 mt-8 mb-4"
-                        >
-                            Education
-                        </h3>
-
-                        <ul class="space-y-3 text-neutral-600">
-                            <li>
-                                <strong>MSc in Control Engineering</strong><br
-                                />
-                                <span class="text-sm text-neutral-500"
-                                    >University of M'Hamed Bougara – IGEE · 2021
-                                    - 2023</span
-                                >
-                            </li>
-                            <li>
-                                <strong
-                                    >BS in Electronic and Electrical Engineering</strong
-                                ><br />
-                                <span class="text-sm text-neutral-500"
-                                    >University of M'Hamed Bougara – IGEE · 2018
-                                    - 2021</span
-                                >
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Quick Info Sidebar -->
-                <div>
+                <!-- What I Focus On -->
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
                     <div
-                        class="bg-neutral-50 rounded-xl p-6 border border-neutral-200 sticky top-24"
+                        class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:shadow-lg hover:shadow-primary-100/30 transition-all duration-300"
                     >
-                        <h3 class="font-semibold text-neutral-900 mb-4">
-                            Quick Info
-                        </h3>
-
-                        <div class="space-y-4">
-                            <div>
-                                <p class="text-sm text-neutral-500">Role</p>
-                                <p class="font-medium text-neutral-900">
-                                    {siteData.title}
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-sm text-neutral-500">Location</p>
-                                <p class="font-medium text-neutral-900">
-                                    {siteData.location}
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-sm text-neutral-500">
-                                    Primary Stack
-                                </p>
-                                <p class="font-medium text-neutral-900">
-                                    Laravel, Vue 3, PostgreSQL
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-sm text-neutral-500">
-                                    Experience
-                                </p>
-                                <p class="font-medium text-neutral-900">
-                                    6+ Years
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="text-sm text-neutral-500">
-                                    Availability
-                                </p>
-                                <p class="font-medium text-green-600">
-                                    Open to opportunities
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 pt-6 border-t border-neutral-200">
-                            <a
-                                href="#contact"
-                                class="btn btn-primary w-full justify-center"
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mb-4"
+                        >
+                            <svg
+                                class="w-6 h-6 text-primary-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
                             >
-                                Get in Touch
-                            </a>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+                                ></path>
+                            </svg>
                         </div>
+                        <h3 class="font-semibold text-lg text-neutral-900 mb-2">
+                            Backend Development
+                        </h3>
+                        <p class="text-neutral-600 text-sm">
+                            PHP, Laravel, Livewire, Filament, Node.js, REST
+                            APIs, GraphQL
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:shadow-lg hover:shadow-primary-100/30 transition-all duration-300"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-100 to-violet-200 flex items-center justify-center mb-4"
+                        >
+                            <svg
+                                class="w-6 h-6 text-violet-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg text-neutral-900 mb-2">
+                            Frontend Development
+                        </h3>
+                        <p class="text-neutral-600 text-sm">
+                            Vue 3, Alpine.js, JavaScript, Tailwind CSS,
+                            Bootstrap
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:shadow-lg hover:shadow-primary-100/30 transition-all duration-300"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center mb-4"
+                        >
+                            <svg
+                                class="w-6 h-6 text-emerald-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg text-neutral-900 mb-2">
+                            Microservices
+                        </h3>
+                        <p class="text-neutral-600 text-sm">
+                            Building distributed systems with Docker, Kafka,
+                            GraphQL API Gateways
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:shadow-lg hover:shadow-primary-100/30 transition-all duration-300"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center mb-4"
+                        >
+                            <svg
+                                class="w-6 h-6 text-orange-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-lg text-neutral-900 mb-2">
+                            DevOps
+                        </h3>
+                        <p class="text-neutral-600 text-sm">
+                            Docker, CI/CD pipelines, AWS, Linux server
+                            management, Nginx
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="card-glass p-8 md:p-10">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold text-neutral-900 mb-4">
+                            Education
+                        </h2>
+                        <div
+                            class="w-16 h-1 bg-gradient-to-r from-primary-500 to-violet-500 mx-auto rounded-full"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                        <div
+                            class="text-center p-6 bg-white/50 rounded-xl border border-neutral-100"
+                        >
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center mx-auto mb-4"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                    <path
+                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-neutral-900 mb-1">
+                                MSc in Control Engineering
+                            </h3>
+                            <p class="text-sm text-neutral-500">
+                                University of M'Hamed Bougara – IGEE
+                            </p>
+                            <p
+                                class="text-sm text-primary-600 font-medium mt-1"
+                            >
+                                2021 - 2023
+                            </p>
+                        </div>
+
+                        <div
+                            class="text-center p-6 bg-white/50 rounded-xl border border-neutral-100"
+                        >
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center mx-auto mb-4"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                    <path
+                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-neutral-900 mb-1">
+                                BS in Electronic & Electrical Engineering
+                            </h3>
+                            <p class="text-sm text-neutral-500">
+                                University of M'Hamed Bougara – IGEE
+                            </p>
+                            <p class="text-sm text-violet-600 font-medium mt-1">
+                                2018 - 2021
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Info -->
+                <div
+                    class="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-center"
+                >
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-neutral-200/50"
+                    >
+                        <p class="text-sm text-neutral-500 mb-1">Role</p>
+                        <p class="font-semibold text-neutral-900">
+                            {siteData.title}
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-neutral-200/50"
+                    >
+                        <p class="text-sm text-neutral-500 mb-1">Location</p>
+                        <p class="font-semibold text-neutral-900">
+                            {siteData.location}
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-neutral-200/50"
+                    >
+                        <p class="text-sm text-neutral-500 mb-1">Experience</p>
+                        <p class="font-semibold text-neutral-900">6+ Years</p>
+                    </div>
+                    <div
+                        class="bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-neutral-200/50"
+                    >
+                        <p class="text-sm text-neutral-500 mb-1">
+                            Availability
+                        </p>
+                        <p class="font-semibold text-green-600">
+                            Open to opportunities
+                        </p>
                     </div>
                 </div>
             </div>
