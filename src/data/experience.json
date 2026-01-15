@@ -2,34 +2,53 @@
     "experiences": [
         {
             "role": "Full-Stack Developer",
+            "company": "Docteur360",
+            "context": "Hybrid",
+            "location": "Algiers",
+            "period": "Aug 2023 - Present",
+            "responsibilities": [
+                "Leading the development of docteur360.dz using the Laravel stack with native Blade, CSS, and JavaScript",
+                "Built 4+ web applications consuming the core platform API to deliver services to external partners",
+                "Led the development of \"Kirkonos\", a cancer-treatment support application using Laravel and Livewire, including video meeting features",
+                "Maintaining production systems, handling CI/CD pipelines, server management, and technical documentation"
+            ]
+        },
+        {
+            "role": "Backend Engineer",
+            "company": "Industry4Solutions",
+            "context": "Contract",
+            "location": "Worcester",
+            "period": "Oct 2023 - May 2025",
+            "responsibilities": [
+                "Implemented a data pipeline for real-time industrial monitoring using Node.js, MQTT, Kafka, and InfluxDB",
+                "Integrated multiple data sources including SQL databases, CSV files, and OPC-UA servers",
+                "Designed and implemented a microservices architecture with a GraphQL API Gateway",
+                "Dockerized backend services and exposed a unified GraphQL API for frontend consumption"
+            ]
+        },
+        {
+            "role": "Backend Web Developer",
+            "company": "Triemploi",
+            "context": "Remote",
+            "location": "Algiers",
+            "period": "Oct 2021 - Oct 2023",
+            "responsibilities": [
+                "Maintained production systems with regular updates and bug fixes",
+                "Refactored a legacy PHP application and migrated from PHP 5 to PHP 7, improving stability and performance",
+                "Fixed UI issues and added multilingual support (Arabic & French)",
+                "Managed deployment, server configuration, and system updates"
+            ]
+        },
+        {
+            "role": "Frontend Web Developer",
+            "company": "BeyondSolutions",
             "context": "Freelance",
-            "period": "2022 - Present",
+            "location": "Jordan",
+            "period": "Sep 2020 - Aug 2022",
             "responsibilities": [
-                "Designed and developed custom web applications for clients across various industries",
-                "Built RESTful APIs and integrated third-party services",
-                "Implemented CI/CD pipelines for automated testing and deployment",
-                "Collaborated with clients to gather requirements and deliver solutions on time"
-            ]
-        },
-        {
-            "role": "Backend Developer",
-            "context": "Startup",
-            "period": "2020 - 2022",
-            "responsibilities": [
-                "Developed core backend services for a SaaS platform using Laravel",
-                "Optimized database queries reducing response times by 40%",
-                "Implemented payment integration and subscription management",
-                "Mentored junior developers and conducted code reviews"
-            ]
-        },
-        {
-            "role": "Web Developer",
-            "context": "Agency",
-            "period": "2018 - 2020",
-            "responsibilities": [
-                "Built client websites and e-commerce platforms",
-                "Maintained and upgraded legacy PHP applications",
-                "Created responsive designs with modern CSS frameworks"
+                "Built complete web interfaces using HTML, CSS, Bootstrap, jQuery, and vanilla JavaScript",
+                "Ensured responsive behavior across desktop, tablet, and mobile devices",
+                "Converted design files (PSD, AI, etc.) into fully responsive, production-ready UIs"
             ]
         }
     ]

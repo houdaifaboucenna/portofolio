@@ -5,21 +5,26 @@
             "skills": [
                 "PHP",
                 "Laravel",
+                "Livewire",
+                "Filament",
                 "Node.js",
+                "Express.js",
                 "REST APIs",
-                "GraphQL",
-                "Microservices"
+                "GraphQL"
             ]
         },
         {
             "name": "Frontend",
             "skills": [
                 "JavaScript",
-                "TypeScript",
-                "Vue.js",
-                "React",
+                "Vue 3",
+                "Alpine.js",
+                "jQuery",
+                "HTML",
+                "CSS",
                 "Tailwind CSS",
-                "Alpine.js"
+                "Bootstrap",
+                "Sass"
             ]
         },
         {
@@ -27,20 +32,21 @@
             "skills": [
                 "MySQL",
                 "PostgreSQL",
-                "Redis",
                 "MongoDB",
-                "Eloquent ORM"
+                "InfluxDB"
             ]
         },
         {
             "name": "DevOps & Tools",
             "skills": [
                 "Docker",
-                "Git",
-                "CI/CD",
+                "GitHub Actions",
+                "AWS",
                 "Linux",
                 "Nginx",
-                "AWS/DigitalOcean"
+                "Apache",
+                "Git",
+                "Bash"
             ]
         }
     ]

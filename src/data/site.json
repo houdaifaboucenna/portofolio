@@ -1,11 +1,12 @@
 {
-    "name": "Your Name",
-    "title": "Laravel / Full-Stack Developer",
-    "tagline": "Building scalable web applications with clean code and modern architecture",
-    "description": "Full-stack developer specializing in Laravel, PHP, and modern JavaScript. I build robust APIs, SaaS platforms, and custom web solutions.",
-    "email": "your.email@example.com",
-    "phone": "+1234567890",
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
+    "name": "Houdaifa Boucenna",
+    "title": "Full-Stack Laravel Developer",
+    "tagline": "Building scalable and maintainable web applications with clean code and modern architecture",
+    "description": "Full-Stack Web Developer with nearly 6 years of experience building scalable web applications. Specialized in Laravel (PHP) with strong front-end foundations, API design, and microservices architecture.",
+    "email": "boucena214@gmail.com",
+    "phone": "+213 540 94 42 56",
+    "github": "https://github.com/houdaifaboucenna",
+    "linkedin": "https://linkedin.com/in/houdaifaboucenna",
+    "location": "Algiers, Algeria",
     "siteUrl": "https://yourdomain.com"
 }
