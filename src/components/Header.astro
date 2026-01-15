@@ -1,6 +1,4 @@
 ---
-import siteData from "../data/site.json";
-
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/works", label: "Projects" },
@@ -15,16 +13,7 @@ const currentPath = Astro.url.pathname;
     class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200"
 >
     <nav class="container">
-        <div class="flex items-center justify-between h-16">
-            <!-- Logo / Name -->
-            <a
-                href="/"
-                class="flex items-center gap-2 text-xl font-semibold text-neutral-900 hover:text-primary-600 transition-colors"
-            >
-                <span class="text-primary-600">&lt;/&gt;</span>
-                <span class="hidden sm:inline">{siteData.name}</span>
-            </a>
-
+        <div class="flex items-center justify-center h-14">
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
                 {
@@ -76,7 +65,7 @@ const currentPath = Astro.url.pathname;
 
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden pb-4">
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col items-center gap-4">
                 {
                     navLinks.map((link) => (
                         <a

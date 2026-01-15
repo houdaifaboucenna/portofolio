@@ -1,56 +1,58 @@
 ---
-import skillsData from "../../data/skills.json";
-
-const categoryIcons: Record<string, string> = {
-    Backend: "⚙️",
-    Frontend: "🎨",
-    Databases: "🗃️",
-    "DevOps & Tools": "🔧",
-};
+// Skills with SVG icons for popular technologies
+const skills = [
+    // Backend
+    { name: "PHP", icon: "php", category: "Backend" },
+    { name: "Laravel", icon: "laravel", category: "Backend" },
+    { name: "Livewire", icon: "livewire", category: "Backend" },
+    { name: "Node.js", icon: "nodejs", category: "Backend" },
+    { name: "GraphQL", icon: "graphql", category: "Backend" },
+    // Frontend
+    { name: "JavaScript", icon: "javascript", category: "Frontend" },
+    { name: "Vue.js", icon: "vue", category: "Frontend" },
+    { name: "Alpine.js", icon: "alpine", category: "Frontend" },
+    { name: "Tailwind", icon: "tailwind", category: "Frontend" },
+    // Database
+    { name: "MySQL", icon: "mysql", category: "Database" },
+    { name: "PostgreSQL", icon: "postgresql", category: "Database" },
+    { name: "MongoDB", icon: "mongodb", category: "Database" },
+    // DevOps
+    { name: "Docker", icon: "docker", category: "DevOps" },
+    { name: "Git", icon: "git", category: "DevOps" },
+    { name: "Linux", icon: "linux", category: "DevOps" },
+    { name: "AWS", icon: "aws", category: "DevOps" },
+];
 ---
 
-<section id="skills" class="section bg-neutral-50">
+<section id="skills" class="section bg-white">
     <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
+        <h2 class="section-title">Tech Stack</h2>
         <p class="section-subtitle max-w-2xl">
-            The tools and technologies I work with to build great products.
+            Technologies I use to build scalable applications.
         </p>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
             {
-                skillsData.categories.map((category) => (
-                    <div class="bg-white p-6 rounded-xl border border-neutral-200 hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-2xl">
-                                {categoryIcons[category.name] || "📦"}
-                            </span>
-                            <h3 class="font-semibold text-neutral-900">
-                                {category.name}
-                            </h3>
-                        </div>
-                        <ul class="space-y-2">
-                            {category.skills.map((skill) => (
-                                <li class="flex items-center gap-2 text-neutral-600">
-                                    <svg
-                                        class="w-4 h-4 text-primary-500 flex-shrink-0"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M5 13l4 4L19 7"
-                                        />
-                                    </svg>
-                                    <span class="text-sm">{skill}</span>
-                                </li>
-                            ))}
-                        </ul>
+                skills.map((skill) => (
+                    <div class="skill-badge group" title={skill.name}>
+                        <img
+                            src={`https://cdn.simpleicons.org/${skill.icon}`}
+                            alt={skill.name}
+                            class="w-5 h-5 grayscale group-hover:grayscale-0 transition-all"
+                            loading="lazy"
+                        />
+                        <span class="text-sm font-medium text-neutral-700 group-hover:text-neutral-900">
+                            {skill.name}
+                        </span>
                     </div>
                 ))
             }
         </div>
     </div>
 </section>
+
+<style>
+    .skill-badge {
+        @apply inline-flex items-center gap-2 px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-all cursor-default;
+    }
+</style>
