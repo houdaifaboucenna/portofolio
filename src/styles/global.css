@@ -51,7 +51,7 @@
 
   /* Gradient text effect */
   .section-title-gradient {
-    @apply text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-primary-500 to-violet-500 bg-clip-text text-transparent;
+    @apply text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 bg-clip-text text-transparent;
   }
 
   .section-subtitle {
@@ -82,17 +82,17 @@
 
   /* Refined Glassmorphism */
   .card-glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-indigo-500/5 rounded-2xl transition-all duration-300;
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-primary-500/5 rounded-2xl transition-all duration-300;
   }
 
   .card-glass-hover {
-    @apply hover:bg-white/80 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1 hover:border-primary-200/50;
+    @apply hover:bg-white/80 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1 hover:border-primary-200/50;
   }
 
   /* Animated gradient background */
   .gradient-bg {
-    background: radial-gradient(circle at top left, #f5f3ff 0%, transparent 40%),
-      radial-gradient(circle at bottom right, #eff6ff 0%, transparent 40%),
+    background: radial-gradient(circle at top left, #ecfdf5 0%, transparent 40%),
+      radial-gradient(circle at bottom right, #f0fdfa 0%, transparent 40%),
       #fafafa;
   }
 
@@ -115,7 +115,7 @@
 
   .link-animated::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-violet-500 transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 transition-all duration-300;
   }
 
   .link-animated:hover::after {
@@ -127,11 +127,11 @@
 
   /* Glow effect */
   .glow {
-    box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.4);
   }
 
   .glow-sm {
-    box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.3);
   }
 
   /* Smooth hover lift */
