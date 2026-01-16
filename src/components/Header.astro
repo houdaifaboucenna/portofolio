@@ -14,14 +14,12 @@ const currentPath = Astro.url.pathname;
 <header
     class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4"
 >
-    <nav
-        class="bg-white/80 backdrop-blur-xl border border-neutral-200/50 rounded-2xl shadow-lg shadow-neutral-900/5 px-6"
-    >
-        <div class="flex items-center justify-between h-14">
+    <nav class="card-glass px-6 py-2.5">
+        <div class="flex items-center justify-between h-12">
             <!-- Name/Logo (left aligned) -->
             <a
                 href="/"
-                class="text-lg font-bold bg-gradient-to-r from-primary-600 to-violet-600 bg-clip-text text-transparent hover:from-primary-500 hover:to-violet-500 transition-all"
+                class="text-lg font-bold gradient-text hover:opacity-80 transition-opacity"
             >
                 {siteData.name.split(" ")[0]}
             </a>
@@ -33,10 +31,10 @@ const currentPath = Astro.url.pathname;
                         <a
                             href={link.href}
                             class:list={[
-                                "px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200",
+                                "px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300",
                                 currentPath === link.href
-                                    ? "bg-primary-100/80 text-primary-700"
-                                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80",
+                                    ? "bg-primary-50 text-primary-600 shadow-sm ring-1 ring-primary-100"
+                                    : "text-neutral-600 hover:text-primary-600 hover:bg-white/50",
                             ]}
                         >
                             {link.label}
@@ -48,12 +46,12 @@ const currentPath = Astro.url.pathname;
             <!-- Mobile Menu Button -->
             <button
                 id="mobile-menu-btn"
-                class="md:hidden p-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-xl transition-colors"
+                class="md:hidden p-2 text-neutral-600 hover:text-primary-600 transition-colors"
                 aria-label="Toggle menu"
                 aria-expanded="false"
             >
                 <svg
-                    class="w-5 h-5"
+                    class="w-6 h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -76,17 +74,22 @@ const currentPath = Astro.url.pathname;
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-            <div class="flex flex-col gap-1 pt-2 border-t border-neutral-100">
+        <div
+            id="mobile-menu"
+            class="hidden md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+        >
+            <div
+                class="flex flex-col gap-1 py-4 border-t border-neutral-100/50 mt-2"
+            >
                 {
                     navLinks.map((link) => (
                         <a
                             href={link.href}
                             class:list={[
-                                "px-4 py-2.5 text-sm font-medium rounded-xl transition-all",
+                                "px-4 py-3 text-sm font-medium rounded-xl transition-all",
                                 currentPath === link.href
-                                    ? "bg-primary-100/80 text-primary-700"
-                                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80",
+                                    ? "bg-primary-50 text-primary-600"
+                                    : "text-neutral-600 hover:text-primary-600 hover:bg-neutral-50",
                             ]}
                         >
                             {link.label}
@@ -98,9 +101,6 @@ const currentPath = Astro.url.pathname;
     </nav>
 </header>
 
-<!-- Spacer for fixed header -->
-<div class="h-20"></div>
-
 <script>
     const menuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -110,8 +110,28 @@ const currentPath = Astro.url.pathname;
     menuBtn?.addEventListener("click", () => {
         const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
         menuBtn.setAttribute("aria-expanded", (!isExpanded).toString());
-        mobileMenu?.classList.toggle("hidden");
+
+        // Toggle icons
         menuIcon?.classList.toggle("hidden");
         closeIcon?.classList.toggle("hidden");
+
+        // Toggle menu visibility with smooth transition classes
+        if (mobileMenu) {
+            if (!isExpanded) {
+                mobileMenu.classList.remove("hidden");
+                // Small delay to allow display:block to apply before opacity transition
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.remove("max-h-0", "opacity-0");
+                    mobileMenu.classList.add("max-h-64", "opacity-100");
+                });
+            } else {
+                mobileMenu.classList.remove("max-h-64", "opacity-100");
+                mobileMenu.classList.add("max-h-0", "opacity-0");
+                // Wait for transition to finish
+                setTimeout(() => {
+                    mobileMenu.classList.add("hidden");
+                }, 300);
+            }
+        }
     });
 </script>

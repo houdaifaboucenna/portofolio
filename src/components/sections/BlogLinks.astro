@@ -4,9 +4,10 @@ import blogLinksData from "../../data/blog-links.json";
 interface Props {
     limit?: number;
     showViewAll?: boolean;
+    showTitle?: boolean;
 }
 
-const { limit, showViewAll = false } = Astro.props;
+const { limit, showViewAll = false, showTitle = true } = Astro.props;
 
 const articles = limit
     ? blogLinksData.articles.slice(0, limit)
@@ -29,35 +30,37 @@ function formatDate(dateString: string): string {
 <section id="blog" class="section bg-white">
     <div class="container">
         <!-- Centered Header -->
-        <div class="section-header">
-            <h2 class="section-title">Blog & Writing</h2>
-            <p class="section-subtitle">
-                Technical articles and insights I've shared
-            </p>
-            {
-                showViewAll && (
-                    <a
-                        href="/blog"
-                        class="link-animated inline-flex items-center gap-2 mt-4"
-                    >
-                        View all articles
-                        <svg
-                            class="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+        {
+            showTitle && (
+                <div class="section-header">
+                    <h2 class="section-title">Blog & Writing</h2>
+                    <p class="section-subtitle">
+                        Technical articles and insights I've shared
+                    </p>
+                    {showViewAll && (
+                        <a
+                            href="/blog"
+                            class="link-animated inline-flex items-center gap-2 mt-4"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
-                    </a>
-                )
-            }
-        </div>
+                            View all articles
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </a>
+                    )}
+                </div>
+            )
+        }
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {

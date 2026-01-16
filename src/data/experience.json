@@ -3,6 +3,7 @@
         {
             "role": "Full-Stack Developer",
             "company": "Docteur360",
+            "logo": "/images/docteur_360_logo.jpeg",
             "context": "Hybrid",
             "location": "Algiers",
             "period": "Aug 2023 - Present",
@@ -16,6 +17,7 @@
         {
             "role": "Backend Engineer",
             "company": "Industry4Solutions",
+            "logo": "/images/i4s_logo.jpeg",
             "context": "Contract",
             "location": "Worcester",
             "period": "Oct 2023 - May 2025",
@@ -29,6 +31,7 @@
         {
             "role": "Backend Web Developer",
             "company": "Triemploi",
+            "logo": "/images/triemploi_logo.jpeg",
             "context": "Remote",
             "location": "Algiers",
             "period": "Oct 2021 - Oct 2023",
@@ -42,6 +45,7 @@
         {
             "role": "Frontend Web Developer",
             "company": "BeyondSolutions",
+            "logo": "",
             "context": "Freelance",
             "location": "Jordan",
             "period": "Sep 2020 - Aug 2022",

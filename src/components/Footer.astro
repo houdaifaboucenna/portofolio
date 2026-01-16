@@ -11,45 +11,40 @@ const navLinks = [
 ];
 ---
 
-<footer class="relative bg-neutral-900 text-neutral-400 overflow-hidden">
-    <!-- Decorative gradient -->
+<footer
+    class="relative bg-neutral-900 border-t border-white/10 overflow-hidden"
+>
+    <!-- Subtle gradient only -->
     <div
-        class="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent opacity-50"
+        class="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent opacity-30"
     >
     </div>
 
-    <div class="container relative z-10 py-16">
-        <div class="text-center space-y-8">
-            <!-- Logo/Name -->
-            <a
-                href="/"
-                class="inline-block text-2xl font-bold bg-gradient-to-r from-primary-400 to-violet-400 bg-clip-text text-transparent hover:from-primary-300 hover:to-violet-300 transition-all"
-            >
-                {siteData.name.split(" ")[0]}
-            </a>
+    <div class="container relative z-10 py-8 md:py-10">
+        <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+            <!-- Copyright & Logo -->
+            <div class="text-center md:text-left">
+                <a
+                    href="/"
+                    class="text-lg font-bold text-white hover:opacity-80 transition-opacity mb-1 inline-block"
+                >
+                    {siteData.name.split(" ")[0]}
+                </a>
+                <p class="text-sm text-neutral-500">
+                    © {currentYear} All rights reserved.
+                </p>
+            </div>
 
-            <!-- Navigation -->
-            <nav class="flex flex-wrap justify-center gap-6">
-                {
-                    navLinks.map((link) => (
-                        <a
-                            href={link.href}
-                            class="text-sm text-neutral-400 hover:text-white transition-colors"
-                        >
-                            {link.label}
-                        </a>
-                    ))
-                }
-            </nav>
-
-            <!-- Social Links -->
-            <div class="flex justify-center gap-4">
+            <!-- Social Links (Compact) -->
+            <div class="flex items-center gap-4">
                 <a
                     href={siteData.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-xl bg-neutral-800/50 hover:bg-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all hover:-translate-y-0.5"
-                    aria-label="GitHub Profile"
+                    class="text-neutral-400 hover:text-white transition-colors p-2"
+                    aria-label="GitHub"
                 >
                     <svg
                         class="w-5 h-5"
@@ -65,8 +60,8 @@ const navLinks = [
                     href={siteData.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-xl bg-neutral-800/50 hover:bg-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all hover:-translate-y-0.5"
-                    aria-label="LinkedIn Profile"
+                    class="text-neutral-400 hover:text-white transition-colors p-2"
+                    aria-label="LinkedIn"
                 >
                     <svg
                         class="w-5 h-5"
@@ -80,7 +75,7 @@ const navLinks = [
                 </a>
                 <a
                     href={`mailto:${siteData.email}`}
-                    class="w-10 h-10 rounded-xl bg-neutral-800/50 hover:bg-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all hover:-translate-y-0.5"
+                    class="text-neutral-400 hover:text-white transition-colors p-2"
                     aria-label="Email"
                 >
                     <svg
@@ -98,18 +93,6 @@ const navLinks = [
                     </svg>
                 </a>
             </div>
-
-            <!-- Divider -->
-            <div
-                class="w-24 h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent mx-auto"
-            >
-            </div>
-
-            <!-- Copyright -->
-            <p class="text-sm text-neutral-500">
-                © {currentYear}
-                {siteData.name}. All rights reserved.
-            </p>
         </div>
     </div>
 </footer>

@@ -4,7 +4,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Modern indigo/violet palette
+                // Modern indigo palette
                 primary: {
                     50: '#eef2ff',
                     100: '#e0e7ff',
@@ -17,13 +17,31 @@ export default {
                     800: '#3730a3',
                     900: '#312e81',
                     950: '#1e1b4b'
+                },
+                // Violet/Purple accent palette
+                secondary: {
+                    50: '#f5f3ff',
+                    100: '#ede9fe',
+                    200: '#ddd6fe',
+                    300: '#c4b5fd',
+                    400: '#a78bfa',
+                    500: '#8b5cf6',
+                    600: '#7c3aed',
+                    700: '#6d28d9',
+                    800: '#5b21b6',
+                    900: '#4c1d95',
+                    950: '#2e1065',
                 }
             },
             fontFamily: {
                 sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
                 mono: ['JetBrains Mono', 'Fira Code', 'monospace']
-            }
-        }
+            },
+            container: {
+                center: true,
+                padding: '2rem',
+            },
+        },
     },
     plugins: []
 };

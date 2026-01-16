@@ -10,8 +10,9 @@
   }
 
   body {
-    @apply bg-neutral-50 text-neutral-700 antialiased;
+    @apply bg-neutral-50 text-neutral-800 antialiased selection:bg-primary-500 selection:text-white;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
   }
 
   h1,
@@ -79,38 +80,33 @@
     @apply bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm border border-neutral-200/50 overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-neutral-200/50 hover:-translate-y-1;
   }
 
+  /* Refined Glassmorphism */
   .card-glass {
-    @apply bg-white/50 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl shadow-neutral-900/5;
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-indigo-500/5 rounded-2xl transition-all duration-300;
   }
 
-  .badge {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium;
-  }
-
-  .badge-primary {
-    @apply bg-primary-100/80 text-primary-700 backdrop-blur-sm;
-  }
-
-  .badge-neutral {
-    @apply bg-neutral-100/80 text-neutral-600 backdrop-blur-sm;
+  .card-glass-hover {
+    @apply hover:bg-white/80 hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1 hover:border-primary-200/50;
   }
 
   /* Animated gradient background */
   .gradient-bg {
-    background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #f0fdf4 100%);
+    background: radial-gradient(circle at top left, #f5f3ff 0%, transparent 40%),
+      radial-gradient(circle at bottom right, #eff6ff 0%, transparent 40%),
+      #fafafa;
   }
 
-  .gradient-bg-animated {
-    background: linear-gradient(-45deg, #eef2ff, #faf5ff, #f0fdf4, #ecfeff);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
   }
 
   /* Floating decorative elements */
   .floating-orb {
-    @apply absolute rounded-full blur-3xl opacity-30 pointer-events-none;
-    animation: float 8s ease-in-out infinite;
+    @apply absolute rounded-full blur-[80px] opacity-40 mix-blend-multiply filter pointer-events-none;
+    animation: float 10s ease-in-out infinite;
   }
+
+
 
   /* Animated link underline */
   .link-animated {
@@ -175,6 +171,28 @@
   }
 }
 
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -205,4 +223,22 @@
 
 .animation-delay-400 {
   animation-delay: 0.4s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 30s linear infinite reverse;
 }

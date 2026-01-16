@@ -6,9 +6,15 @@ interface Props {
     featured?: boolean;
     limit?: number;
     showViewAll?: boolean;
+    showTitle?: boolean;
 }
 
-const { featured = false, limit, showViewAll = false } = Astro.props;
+const {
+    featured = false,
+    limit,
+    showViewAll = false,
+    showTitle = true,
+} = Astro.props;
 
 let projects = await getCollection("projects");
 
@@ -28,52 +34,54 @@ if (limit) {
 
 <section id="projects" class="section gradient-bg relative overflow-hidden">
     <!-- Decorative elements -->
+    <!-- Decorative elements -->
     <div class="absolute inset-0 opacity-40">
         <div
-            class="absolute top-1/4 left-0 w-64 h-64 bg-violet-200 rounded-full blur-3xl"
+            class="floating-orb w-64 h-64 bg-secondary-200/40 top-1/4 left-0 blur-3xl"
         >
         </div>
         <div
-            class="absolute bottom-1/4 right-0 w-72 h-72 bg-primary-200 rounded-full blur-3xl"
+            class="floating-orb w-72 h-72 bg-primary-200/40 bottom-1/4 right-0 blur-3xl"
+            style="animation-delay: -5s;"
         >
         </div>
     </div>
 
     <div class="container relative z-10">
         <!-- Centered Header -->
-        <div class="section-header">
-            <h2 class="section-title-gradient">Projects</h2>
-            <p class="section-subtitle">
-                {
-                    featured
-                        ? "Featured work showcasing my expertise"
-                        : "A collection of my work and technical projects"
-                }
-            </p>
-            {
-                showViewAll && (
-                    <a
-                        href="/projects"
-                        class="link-animated inline-flex items-center gap-2 mt-4"
-                    >
-                        View all projects
-                        <svg
-                            class="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+        {
+            showTitle && (
+                <div class="section-header">
+                    <h2 class="section-title-gradient">Projects</h2>
+                    <p class="section-subtitle">
+                        {featured
+                            ? "Featured work showcasing my expertise"
+                            : "A collection of my work and technical projects"}
+                    </p>
+                    {showViewAll && (
+                        <a
+                            href="/projects"
+                            class="link-animated inline-flex items-center gap-2 mt-4"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                        </svg>
-                    </a>
-                )
-            }
-        </div>
+                            View all projects
+                            <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </a>
+                    )}
+                </div>
+            )
+        }
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => <ProjectCard project={project} />)}
