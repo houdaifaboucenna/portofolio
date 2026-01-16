@@ -1,5 +1,11 @@
 ---
 import siteData from "../../data/site.json";
+
+interface Props {
+    showTitle?: boolean;
+}
+
+const { showTitle = true } = Astro.props;
 ---
 
 <section id="contact" class="section bg-white relative overflow-hidden">
@@ -11,12 +17,17 @@ import siteData from "../../data/site.json";
 
     <div class="container relative z-10">
         <!-- Centered Header -->
-        <div class="section-header">
-            <h2 class="section-title-gradient">Get In Touch</h2>
-            <p class="section-subtitle">
-                Interested in working together? I'd love to hear from you.
-            </p>
-        </div>
+        {
+            showTitle && (
+                <div class="section-header">
+                    <h2 class="section-title-gradient">Get In Touch</h2>
+                    <p class="section-subtitle">
+                        Interested in working together? I'd love to hear from
+                        you.
+                    </p>
+                </div>
+            )
+        }
 
         <div class="max-w-2xl mx-auto">
             <!-- Contact Cards -->

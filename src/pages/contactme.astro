@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Contact from "../components/sections/Contact.astro";
+import siteData from "../data/site.json";
+
+const title = `Contact | ${siteData.name}`;
+const description =
+    "Get in touch for collaborations, opportunities, or just to say hello.";
+---
+
+<BaseLayout title={title} description={description}>
+    <!-- Page Header -->
+    <section
+        class="relative py-20 md:py-28 gradient-bg-animated overflow-hidden"
+    >
+        <!-- Decorative orbs -->
+        <div
+            class="floating-orb w-64 h-64 bg-emerald-400 -top-10 left-1/4 mix-blend-multiply filter blur-3xl opacity-20"
+        >
+        </div>
+        <div
+            class="floating-orb w-48 h-48 bg-primary-400 bottom-0 right-1/4 mix-blend-multiply filter blur-3xl opacity-20"
+            style="animation-delay: -2s;"
+        >
+        </div>
+
+        <div class="container relative z-10 text-center">
+            <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent mb-6"
+            >
+                Let's Connect
+            </h1>
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Have a project in mind or want to discuss a potential
+                collaboration? I'm always open to new opportunities.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <Contact showTitle={false} />
+</BaseLayout>
