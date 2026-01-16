@@ -2,7 +2,7 @@
 // Complete tech stack from profile with icons
 const skillGroups = [
     {
-        category: "Backend",
+        category: "Backend & Databases",
         skills: [
             { name: "PHP", icon: "php" },
             { name: "Laravel", icon: "laravel" },
@@ -10,12 +10,13 @@ const skillGroups = [
             { name: "Filament", icon: "php" },
             { name: "Node.js", icon: "nodedotjs" },
             { name: "Express.js", icon: "express" },
-            { name: "REST APIs", icon: "openapiinitiative" },
-            { name: "GraphQL", icon: "graphql" },
+            { name: "MySQL", icon: "mysql" },
+            { name: "PostgreSQL", icon: "postgresql" },
+            { name: "MongoDB", icon: "mongodb" },
         ],
     },
     {
-        category: "Frontend",
+        category: "Frontend & UI",
         skills: [
             { name: "JavaScript", icon: "javascript" },
             { name: "Vue 3", icon: "vuedotjs" },
@@ -28,16 +29,7 @@ const skillGroups = [
         ],
     },
     {
-        category: "Databases",
-        skills: [
-            { name: "MySQL", icon: "mysql" },
-            { name: "PostgreSQL", icon: "postgresql" },
-            { name: "MongoDB", icon: "mongodb" },
-            { name: "InfluxDB", icon: "influxdb" },
-        ],
-    },
-    {
-        category: "DevOps & Tools",
+        category: "Tools & Infrastructure",
         skills: [
             { name: "Docker", icon: "docker" },
             { name: "Git", icon: "git" },
@@ -45,12 +37,6 @@ const skillGroups = [
             { name: "Linux", icon: "linux" },
             { name: "Nginx", icon: "nginx" },
             { name: "AWS", icon: "amazonwebservices" },
-        ],
-    },
-    {
-        category: "Testing",
-        skills: [
-            { name: "Pest", icon: "php" },
             { name: "Jest", icon: "jest" },
             { name: "Vitest", icon: "vitest" },
         ],
@@ -80,27 +66,32 @@ const skillGroups = [
             </p>
         </div>
 
-        <div class="space-y-10 max-w-4xl mx-auto">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        >
             {
                 skillGroups.map((group) => (
-                    <div class="text-center">
-                        <h3 class="inline-block text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-5 px-4 py-1.5 bg-white/60 backdrop-blur-sm rounded-full border border-neutral-200/50">
+                    <div class="bg-white/40 backdrop-blur-sm rounded-2xl p-6 border border-white/50 hover:border-primary-200 transition-all duration-300">
+                        <h3 class="text-sm font-semibold text-primary-700 uppercase tracking-wider mb-6 pb-2 border-b border-primary-100 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500" />
                             {group.category}
                         </h3>
-                        <div class="flex flex-wrap justify-center gap-3">
+                        <div class="space-y-4">
                             {group.skills.map((skill) => (
                                 <div
-                                    class="skill-badge group"
+                                    class="group flex items-center gap-3 cursor-default"
                                     title={skill.name}
                                 >
-                                    <img
-                                        src={`https://cdn.simpleicons.org/${skill.icon}`}
-                                        alt=""
-                                        class="w-5 h-5 transition-all duration-300"
-                                        loading="lazy"
-                                        onerror="this.style.display='none'"
-                                    />
-                                    <span class="text-sm font-medium text-neutral-600 group-hover:text-neutral-900 transition-colors">
+                                    <div class="w-10 h-10 rounded-xl bg-white shadow-sm border border-neutral-100 flex items-center justify-center p-2.5 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                                        <img
+                                            src={`https://cdn.simpleicons.org/${skill.icon}`}
+                                            alt=""
+                                            class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                            loading="lazy"
+                                            onerror="this.style.display='none'"
+                                        />
+                                    </div>
+                                    <span class="text-sm font-medium text-neutral-600 group-hover:text-primary-600 transition-colors">
                                         {skill.name}
                                     </span>
                                 </div>
@@ -113,8 +104,4 @@ const skillGroups = [
     </div>
 </section>
 
-<style>
-    .skill-badge {
-        @apply inline-flex items-center gap-2.5 px-4 py-2.5 bg-white/60 backdrop-blur-md border border-white/50 rounded-xl shadow-sm hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1 hover:bg-white hover:border-primary-200 transition-all duration-300 cursor-default;
-    }
-</style>
+<style></style>
