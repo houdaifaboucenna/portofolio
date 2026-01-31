@@ -12,7 +12,7 @@ features:
   - "SEO Optimized & Fast Performance"
 demoUrl: "https://213market.shop"
 featured: true
-order: 1
+order: 2
 ---
 
 ## Overview
