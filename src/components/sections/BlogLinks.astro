@@ -13,11 +13,6 @@ const articles = limit
     ? blogLinksData.articles.slice(0, limit)
     : blogLinksData.articles;
 
-const platformColors: Record<string, string> = {
-    Medium: "bg-primary-100/80 text-primary-700",
-    "Dev.to": "bg-secondary-100/80 text-secondary-700",
-};
-
 function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString("en-US", {
         year: "numeric",
@@ -65,49 +60,90 @@ function formatDate(dateString: string): string {
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {
                 articles.map((article) => (
-                    <a
-                        href={article.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/30 hover:-translate-y-1 transition-all duration-300"
-                    >
-                        <div class="flex items-center gap-3 mb-3">
-                            <span
-                                class:list={[
-                                    "badge text-xs backdrop-blur-sm",
-                                    platformColors[article.platform] ||
-                                        "badge-neutral",
-                                ]}
-                            >
-                                {article.platform}
-                            </span>
-                            <span class="text-sm text-neutral-500">
-                                {formatDate(article.publishDate)}
-                            </span>
-                        </div>
-                        <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
-                            {article.title}
-                        </h3>
-                        <p class="text-sm text-neutral-600 line-clamp-2">
-                            {article.excerpt}
-                        </p>
-                        <div class="mt-4 flex items-center gap-1 text-primary-600 text-sm font-medium">
-                            <span>Read on {article.platform}</span>
-                            <svg
-                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    <div class="group bg-white/70 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        {article.image && (
+                            <div class="w-full h-44 overflow-hidden">
+                                <img
+                                    src={article.image}
+                                    alt={article.title}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
-                            </svg>
+                            </div>
+                        )}
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-sm text-neutral-500">
+                                    {formatDate(article.publishDate)}
+                                </span>
+                            </div>
+                            <h3 class="font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                                {article.title}
+                            </h3>
+                            <p class="text-sm text-neutral-600 line-clamp-2">
+                                {article.excerpt}
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-neutral-100 flex items-center gap-2">
+                                <a
+                                    href={article.mediumUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="blog-link-btn medium-btn"
+                                    title="Read on Medium"
+                                >
+                                    {/* <svg
+                                        class="w-4 h-4"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42S14.2 15.54 14.2 12s1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75S21.62 15.17 21.62 12s.53-5.75 1.19-5.75S24 8.83 24 12z" />
+                                    </svg> */}
+                                    <span>Medium</span>
+                                    <svg
+                                        class="w-3 h-3 opacity-50 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 transition-all"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2.5"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href={article.devtoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="blog-link-btn devto-btn"
+                                    title="Read on Dev.to"
+                                >
+                                    {/* <svg
+                                        class="w-4 h-4"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6v4.36h.58c.37 0 .67-.08.87-.25.21-.18.31-.46.31-.85v-2.19c0-.4-.1-.67-.34-.84zm-6.2-3.8v11.5h21.56V6.25H1.22zM8.89 15.01c-.45.39-1.05.58-1.8.58H5.38V8.41h1.72c.75 0 1.35.19 1.8.58.44.39.66.94.66 1.66v2.7c0 .72-.22 1.27-.67 1.66zm5.97-3.48c0-.2-.02-.36-.07-.48a.61.61 0 00-.37-.32c-.15-.06-.38-.1-.67-.1h-.68v3.72h.56c.43 0 .72-.09.89-.28.16-.19.25-.5.25-.94l.09-1.6zm-1.27-3.12h2.08c.52 0 .95.07 1.28.21.33.14.58.36.76.65.17.28.28.6.3.97.03.36.05.82.05 1.38 0 .56-.02 1.02-.07 1.38-.04.36-.15.68-.32.97-.17.29-.43.5-.76.65-.33.14-.76.21-1.28.21h-2.04V8.41zm7.95 2.15h-2.14v1.74h1.73v1.36h-1.73v1.74h2.14v1.36h-3.1V8.41h3.1v2.15z" />
+                                    </svg> */}
+                                    <span>Dev.to</span>
+                                    <svg
+                                        class="w-3 h-3 opacity-50 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 transition-all"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2.5"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 ))
             }
         </div>
@@ -120,5 +156,39 @@ function formatDate(dateString: string): string {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+
+    .blog-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border: 1px solid transparent;
+    }
+
+    .medium-btn {
+        background: #191919;
+        color: #fff;
+    }
+    .medium-btn:hover {
+        background: #1a1a1a;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        transform: translateY(-1px);
+    }
+
+    .devto-btn {
+        background: #0a0a23;
+        color: #fff;
+    }
+    .devto-btn:hover {
+        background: #0f0f3d;
+        box-shadow: 0 4px 14px rgba(10, 10, 35, 0.35);
+        transform: translateY(-1px);
     }
 </style>
