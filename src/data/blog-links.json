@@ -1,25 +1,20 @@
 {
     "articles": [
         {
-            "title": "Building Scalable APIs with Laravel",
-            "excerpt": "Learn how to design and implement RESTful APIs that can handle millions of requests using Laravel's powerful features.",
-            "platform": "Medium",
-            "url": "https://medium.com/@yourusername/building-scalable-apis",
-            "publishDate": "2024-12-15"
+            "title": "Deploy Laravel to VPS with GitHub Actions (Zero Downtime CI/CD)",
+            "excerpt": "A complete guide to automating Laravel deployments on Ubuntu/Nginx. Learn how to set up a secure, zero-downtime CI/CD pipeline using GitHub Actions.",
+            "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*uwJ_sa8RGdzPGihrKdJSgg.png",
+            "mediumUrl": "https://medium.com/@houdaifaboucenna/deploy-laravel-to-vps-with-github-actions-zero-downtime-ci-cd-529e48035958",
+            "devtoUrl": "https://dev.to/houdaifadev/deploy-laravel-to-vps-with-github-actions-zero-downtime-cicd-f3",
+            "publishDate": "2026-02-11"
         },
         {
-            "title": "Clean Architecture in PHP Applications",
-            "excerpt": "A practical guide to implementing clean architecture principles in your PHP projects for better maintainability.",
-            "platform": "Dev.to",
-            "url": "https://dev.to/yourusername/clean-architecture-php",
-            "publishDate": "2024-11-20"
-        },
-        {
-            "title": "Mastering Laravel Queues",
-            "excerpt": "Deep dive into Laravel's queue system for handling background jobs and improving application performance.",
-            "platform": "Medium",
-            "url": "https://medium.com/@yourusername/mastering-laravel-queues",
-            "publishDate": "2024-10-10"
+            "title": "Deploying Laravel on Shared Hosting (No SSH Required)",
+            "excerpt": "A step-by-step guide to deploying Laravel apps on cPanel when you don't have SSH access. Includes security tips for .env and storage linking.",
+            "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*2BXXUv_yJ0-VscbrzN49Rw.png",
+            "mediumUrl": "https://medium.com/@houdaifaboucenna/deploying-laravel-on-shared-hosting-no-ssh-required-34b409efc7ae",
+            "devtoUrl": "https://dev.to/houdaifadev/deploying-laravel-on-shared-hosting-no-ssh-required-1kbg",
+            "publishDate": "2026-02-05"
         }
     ]
 }
