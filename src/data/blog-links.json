@@ -15,6 +15,14 @@
             "mediumUrl": "https://medium.com/@houdaifaboucenna/deploying-laravel-on-shared-hosting-no-ssh-required-34b409efc7ae",
             "devtoUrl": "https://dev.to/houdaifadev/deploying-laravel-on-shared-hosting-no-ssh-required-1kbg",
             "publishDate": "2026-02-05"
+        },
+        {
+            "title": "From Polling to Real-Time: Building a Laravel 12 Chat with WebSockets & Reverb",
+            "excerpt": "Step-by-step guide to building a real-time chat in Laravel 12 using Reverb WebSockets, reducing polling, server load, and latency.",
+            "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*pYy6d8SLbglaQrCwq-AQWw.jpeg",
+            "mediumUrl": "https://medium.com/@houdaifaboucenna/from-polling-to-real-time-building-a-laravel-12-chat-with-websockets-reverb-0ab51a8120bf",
+            "devtoUrl": "https://dev.to/houdaifadev/from-polling-to-real-time-building-a-laravel-12-chat-with-websockets-reverb-3k9j",
+            "publishDate": "2026-02-25"
         }
     ]
 }
