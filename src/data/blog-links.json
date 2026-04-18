@@ -31,6 +31,14 @@
             "mediumUrl": "https://medium.com/@houdaifaboucenna/from-slow-requests-to-scalable-background-jobs-with-laravel-queues-horizon-b4ba53e62b6d",
             "devtoUrl": "https://dev.to/houdaifadev/from-slow-requests-to-scalable-background-jobs-with-laravel-queues-horizon-2b8",
             "publishDate": "2026-04-10"
+        },
+        {
+            "title": "Laravel + Inertia + Vue 3: Forms, Validation & File Uploads Done Right",
+            "excerpt": "Master forms, validation, and file uploads in Laravel, Inertia, and Vue 3. A professional guide to seamless full-stack data handling.",
+            "image": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*GnB6UxAx3JzvTbZcJc9awA.png",
+            "mediumUrl": "https://medium.com/@houdaifaboucenna/laravel-inertia-js-vue-3-the-ultimate-guide-to-forms-and-file-uploads-7fb089c01517",
+            "devtoUrl": "https://dev.to/houdaifadev/laravel-inertia-vue-3-forms-validation-file-uploads-done-right-3mic",
+            "publishDate": "2026-04-16"
         }
     ]
 }
